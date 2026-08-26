@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voice-isolation"
+version = "0.1.0"
+description = "Near-field speech enhancement with live virtual-microphone routing"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "PyYAML>=6.0",
+  "soundfile>=0.12",
+  "torch>=2.2",
+  "torchaudio>=2.2",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+demo = ["streamlit>=1.38"]
+live = ["sounddevice>=0.5"]
+
+[project.scripts]
+voice-train = "voice_isolation.train:main"
+voice-evaluate = "voice_isolation.evaluate:main"
+voice-enhance = "voice_isolation.inference:main"
+voice-prepare-rirs = "voice_isolation.prepare_rirs:main"
+voice-stream-simulate = "voice_isolation.streaming:main"
+voice-live = "voice_isolation.live:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
