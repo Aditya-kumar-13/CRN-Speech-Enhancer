@@ -1,0 +1,36 @@
+seed: 42
+sample_rate: 16000
+segment_seconds: 1.0
+n_fft: 512
+hop_length: 160
+win_length: 400
+snr_db_min: 0.0
+snr_db_max: 15.0
+speech_interferer_probability: 1.0
+reverberate_speech_interferer: true
+rir_max_seconds: 1.0
+
+data:
+  train_speech: data/manifests/train_speech.jsonl
+  valid_speech: data/manifests/valid_speech.jsonl
+  test_speech: data/manifests/test_speech.jsonl
+  train_noise: null
+  valid_noise: null
+  test_noise: null
+  train_rir: data/manifests/train_rir.jsonl
+  valid_rir: data/manifests/valid_rir.jsonl
+  test_rir: data/manifests/test_rir.jsonl
+
+model:
+  channels: [4, 8, 16]
+  gru_hidden: 32
+  gru_layers: 1
+
+training:
+  batch_size: 2
+  epochs: 1
+  learning_rate: 0.0003
+  num_workers: 0
+  max_steps_per_epoch: 2
+  max_validation_batches: 2
+  checkpoint_dir: artifacts/near_field_smoke

@@ -1,0 +1,39 @@
+{
+  "checkpoint_epoch": 15,
+  "evaluation_split": "test",
+  "examples_per_snr": 100,
+  "parameters": 2414705,
+  "device": "cuda",
+  "results": [
+    {
+      "snr_db": -5.0,
+      "si_sdr_improvement_db": 0.02234079599380493,
+      "snr_improvement_db": 1.7748894000053406,
+      "mean_file_latency_ms": 12.433365719996345
+    },
+    {
+      "snr_db": 0.0,
+      "si_sdr_improvement_db": 1.4682521318271755,
+      "snr_improvement_db": 2.2075470551103353,
+      "mean_file_latency_ms": 8.20774452000137
+    },
+    {
+      "snr_db": 3.0,
+      "si_sdr_improvement_db": 2.102845425605774,
+      "snr_improvement_db": 2.589737644195557,
+      "mean_file_latency_ms": 8.217561100001376
+    },
+    {
+      "snr_db": 6.0,
+      "si_sdr_improvement_db": 2.484942123889923,
+      "snr_improvement_db": 2.8100967264175414,
+      "mean_file_latency_ms": 8.219253579999304
+    },
+    {
+      "snr_db": 10.0,
+      "si_sdr_improvement_db": 2.2095004177093505,
+      "snr_improvement_db": 2.4032631587982176,
+      "mean_file_latency_ms": 8.269915400004493
+    }
+  ]
+}
