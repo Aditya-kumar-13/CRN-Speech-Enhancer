@@ -1,0 +1,29 @@
+seed: 42
+sample_rate: 16000
+segment_seconds: 3.0
+n_fft: 512
+hop_length: 160
+win_length: 400
+snr_db_min: -5.0
+snr_db_max: 10.0
+speech_interferer_probability: 0.0
+data:
+  train_speech: data/manifests/train_speech.jsonl
+  valid_speech: data/manifests/valid_speech.jsonl
+  test_speech: data/manifests/test_speech.jsonl
+  train_noise: data/manifests/train_noise.jsonl
+  valid_noise: data/manifests/valid_noise.jsonl
+  test_noise: data/manifests/test_noise.jsonl
+model:
+  channels:
+  - 16
+  - 32
+  - 64
+  gru_hidden: 256
+  gru_layers: 1
+training:
+  batch_size: 8
+  epochs: 10
+  learning_rate: 0.0003
+  num_workers: 2
+  checkpoint_dir: artifacts/noise_baseline
